@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FlowSenses - Prediction</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>AI Food Waste Prediction</h1>
+
+    <label>Food Name:</label><br>
+    <input type="text" id="food" placeholder="Enter Food Name"><br><br>
+
+    <label>Quantity Prepared (kg):</label><br>
+    <input type="number" id="prepared" placeholder="Enter Quantity"><br><br>
+
+    <button onclick="predictWaste()">Predict</button>
+
+    <h2 id="result"></h2>
+</div>
+
+<script>
+function predictWaste() {
+    let qty = document.getElementById("prepared").value;
+
+    if (qty === "") {
+        document.getElementById("result").innerHTML = "Please enter the quantity.";
+        return;
+    }
+
+    let waste = qty * 0.2;
+
+    document.getElementById("result").innerHTML =
+        "Estimated Food Waste: " + waste + " kg";
+}
+</script>
+
+</body>
+</html>
